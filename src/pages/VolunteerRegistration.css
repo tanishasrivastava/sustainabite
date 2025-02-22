@@ -1,12 +1,13 @@
 .volunteer-container {
+
     max-width: 600px;
     margin: 40px auto;
     padding: 20px;
-    background-color: #ffffff;
+    background-color:rgba(37, 32, 32, 0.9);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: "Poppins", sans-serif;
-    margin-top: 112px;
+    margin-top: 10px;
     width: 560px;
   }
   body {
@@ -17,7 +18,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 155vh;
+    height: 173vh;
   }
   
   .modal-
@@ -30,7 +31,7 @@
   
   p {
     text-align: center;
-    color: #666;
+    color: #dfbde2;
     margin-bottom: 20px;
   }
   
@@ -42,7 +43,7 @@
   label {
     font-weight: 600;
     margin-top: 15px;
-    color: #444;
+    color: #f3e5e5;
   }
   
   input,

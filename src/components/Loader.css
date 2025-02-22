@@ -30,6 +30,7 @@ body {
     background-repeat: repeat-x;
     background-position: 0px 140px;
     animation: fill 5s infinite;
+    margin-top: -700px;
 }
 
 .handle {
@@ -43,6 +44,7 @@ body {
     margin-left: 20px;
     border-radius: 0px 15px 70px 0px;
     box-shadow: 9px solid wheat;
+    margin-top: -380px;
 }
 
 @keyframes fill {
