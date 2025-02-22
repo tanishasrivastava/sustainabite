@@ -1,0 +1,85 @@
+/* src/pages/Home.css */
+/* Main container for the Home section */
+.home-container {
+    max-width: 100%; /* Make the container occupy the full width of the screen */
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    min-height: 100vh;
+    margin-left: -30px;
+    
+  }
+  
+  .slideshow-container {
+    width: 100%;
+    height: 600px; /* Adjust as per design */
+    overflow: hidden;
+  }
+  
+  .slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+ /* Styling for the home section */
+.home-section {
+  margin-top: 700px;/* Increase the top margin to make it more visible */
+    padding: 10px;
+    width: 1412px;
+    margin-left: -126px;
+  }
+  
+  .home-section h1 {
+    font-size: 4rem; /* Adjust font size to make it visually balanced */
+    color: #111;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-left: -40px;
+  }
+  
+  .home-section p {
+    font-size: 1.5rem; /* Adjust font size for the paragraph */
+    color: #111;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-left: -40px;
+  }
+  
+  /* Styling for the image background */
+  .home-background {
+    width: 100%;
+    max-width: 1200px; /* Adjust as per your layout */
+    margin: 0 auto; /* Center the slideshow */
+    position: relative;
+    z-index: 1; /* Ensures it doesn’t overlap sidebar */
+    margin-left: 130px;
+    margin-top: -13px; /* Increase space between the heading and image */
+    margin-bottom: 150px; /* Increase space between the image and footer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .home-background img {
+    max-width: 90%; /* Reduce width slightly to fit within the viewport */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 600px; /* Adjust maximum height */
+  }
+  
+  /* Media query for responsiveness */
+  @media (max-width: 768px) {
+    .home-background img {
+      width: 100%; /* Make the image responsive on smaller screens */
+      height: auto;
+    }
+  
+    .home-section h1 {
+      font-size: 2rem; /* Reduce font size for mobile */
+    }
+  
+    .home-section p {
+      font-size: 1.2rem; /* Adjust paragraph font size on mobile */
+    }
+  }
+  

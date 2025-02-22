@@ -1,0 +1,49 @@
+/* CommunityFunding.css */
+.funding-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .funding-card h2 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .funding-card p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .donate-button {
+    background-color: #ff5f6d;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .donate-button:hover {
+    background-color: #e04e5c;
+  }
+  
+  @media (max-width: 500px) {
+    .funding-card {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    .donate-button {
+      font-size: 16px;
+      padding: 10px 18px;
+    }
+  }
+  

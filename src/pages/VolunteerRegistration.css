@@ -1,0 +1,81 @@
+.volunteer-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: "Poppins", sans-serif;
+    margin-top: 50px ;
+    width: 560px;
+  }
+  body {
+    font-family: "Arial", sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 155vh;
+  }
+  
+  .modal-
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+  }
+  
+  p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-weight: 600;
+    margin-top: 15px;
+    color: #444;
+  }
+  
+  input,
+  select,
+  textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    color: #000000;
+    background-color: #ffffff;
+  }
+  
+  textarea {
+    height: 80px;
+    resize: none;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #fcbc84;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #f7964c;
+  }
+  

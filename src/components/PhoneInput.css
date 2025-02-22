@@ -1,0 +1,82 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Arial", sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .phone-input {
+    width: 100%; /* Makes the input field responsive */
+    max-width: 400px; /* Optional, limits the input width */
+    padding: 10px;
+    margin-bottom: 20px; /* Adds space between the input and the button */
+    font-size: 1rem; /* Adjust font size */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  
+  .phone-input-container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .phone-input-container h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .phone-input-container .phone-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+  }
+  
+  .phone-input::placeholder {
+    color: gray; /* Change placeholder color */
+    font-style: italic; /* Optional, makes placeholder text italic */
+  }
+  .phone-input-container .phone-input:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  }
+  
+  .phone-input-container .send-otp-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    justify-content: space-between;
+   
+
+  }
+  
+  .phone-input-container .send-otp-button:hover {
+    background-color: #45a049;
+  }
+  
+  .phone-input-container .send-otp-button:active {
+    transform: scale(0.98);
+  }

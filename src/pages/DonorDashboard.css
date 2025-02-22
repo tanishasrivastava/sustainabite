@@ -1,0 +1,85 @@
+/* General styles for the donor dashboard */
+.donor-dashboard {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f7f9fc;
+    min-height: 100vh;
+    flex-grow: 1;
+    width: 1360px;
+    margin-left: -34px;
+  }
+  
+  .dashboard-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .dashboard-header h1 {
+    font-size: 2rem;
+    color: #2a9d8f;
+  }
+  
+  .dashboard-header p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  .dashboard-metrics {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+  }
+  
+  .metric-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 30%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .metric-card h3 {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .metric-card p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2a9d8f;
+  }
+  
+  .dashboard-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .dashboard-link {
+    display: block;
+    background-color: #2a9d8f;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    width: 200px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dashboard-link:hover {
+    background-color: #21867a;
+  }
+  
+  .logout {
+    background-color: #e63946;
+  }
+  
+  .logout:hover {
+    background-color: #c92534;
+  }
+  

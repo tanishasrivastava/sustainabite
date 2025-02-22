@@ -1,0 +1,51 @@
+.about-page {
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+   
+    margin: 30px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 778px;
+    width: 1360px;
+    margin-left: -34px;
+
+  }
+  .righteous-regular {
+    font-family: "Righteous", serif;
+    font-weight: 409;
+    font-style: bold;
+    font-size: 29px;
+  }
+  
+  
+  .about-page h1 {
+    font-size: 2.5rem;
+    color: #841e4a;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .about-page h2 {
+    font-size: 1.8rem;
+    color: #841e4a;
+    margin-top: 20px;
+  }
+  
+  .about-page p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+  }
+  
+  .about-page ul {
+    list-style: disc;
+    margin: 15px 20px;
+  }
+  
+  .about-page ul li {
+    font-size: 1.1rem;
+    margin: 5px 0;
+  }
+  
