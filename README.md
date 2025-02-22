@@ -1,5 +1,5 @@
 # SustainaBITE
-# React + Vite
+
 
 # ABOUT THE PROJECT :
 
