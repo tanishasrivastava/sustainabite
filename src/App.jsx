@@ -15,6 +15,9 @@ import Feedback from "./pages/Feedback";
 import VolunteerRegistration from "./pages/VolunteerRegistration"; 
 import AddDonation from "./pages/AddDonation";
 import CommunityFunding from "./pages/CommunityFunding"; // Adjust the path if needed
+import RequestFood from "./pages/RequestFood"; 
+
+
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -49,6 +52,9 @@ const App = () => {
                 <Route path="/feedback" element={<Feedback />} /> {/* New Feedback Route */}
                 <Route path="/volunteer-registration" element={<VolunteerRegistration />} /> {/* ✅ Add Route */}
                 <Route path="/community-funding" element={<CommunityFunding />} />
+                <Route path="/request-food" element={<RequestFood />} />  {/* ✅ Added Route */}
+               
+          
 
               
               </Routes>

@@ -31,6 +31,15 @@
     margin-bottom: 30px;
   }
   
+  .dashboard-linkks {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-left: -598px;
+    margin-top: 100px;
+    margin-left: -6px;
+  }
+  
   .metric-card {
     background-color: #fff;
     border: 1px solid #ddd;

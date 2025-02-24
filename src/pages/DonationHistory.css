@@ -1,0 +1,108 @@
+.donation-history-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.donation-history-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.donation-list {
+    list-style: none;
+    padding: 0;
+}
+
+.donation-item {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.donation-item:hover {
+    transform: scale(1.02);
+}
+
+.donation-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.donation-details {
+    flex: 1;
+}
+
+.donation-details h3 {
+    margin: 5px 0;
+    font-size: 18px;
+    color: #444;
+}
+
+.donation-details p {
+    font-size: 14px;
+    color: #666;
+}
+
+.donation-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-btn, .delete-btn {
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.edit-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #217dbb;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .donation-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .donation-image {
+        margin-bottom: 10px;
+    }
+
+    .donation-actions {
+        flex-direction: column;
+        gap: 5px;
+    }
+}

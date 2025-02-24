@@ -21,7 +21,7 @@
     height: 173vh;
   }
   
-  .modal-
+
   
   h1 {
     text-align: center;
@@ -43,8 +43,59 @@
   label {
     font-weight: 600;
     margin-top: 15px;
-    color: #f3e5e5;
+    color: #271616;
   }
+  /* VolunteerRegistration.css */
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  text-align: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.modal button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #fcbc84;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.modal button:hover {
+  background-color: #f7964c;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
   
   input,
   select,
@@ -62,6 +113,82 @@
     height: 80px;
     resize: none;
   }
+  /* VolunteerRegistration.css */
+
+/* Container for Volunteer Registration */
+.volunteer-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: rgba(37, 32, 32, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
+  margin-top: 10px;
+  width: 560px;
+}
+
+/* Volunteer Registration Heading */
+.volunteer-heading {
+  text-align: center;
+  color: #ffffff; /* Set a distinct color */
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Volunteer Registration Paragraph */
+.volunteer-description {
+  text-align: center;
+  color: #dfbde2;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+/* Volunteer Registration Labels */
+.volunteer-label {
+  font-weight: 600;
+  margin-top: 15px;
+  color: #ffffff; /* Set a unique label color */
+  font-size: 1rem;
+}
+
+/* Inputs, Selects, and Textareas */
+input,
+select,
+textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+/* Textarea Specific Styles */
+textarea {
+  height: 80px;
+  resize: none;
+}
+
+/* Submit Button */
+button {
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #fcbc84;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: #f7964c;
+}
+
   
   button {
     margin-top: 20px;

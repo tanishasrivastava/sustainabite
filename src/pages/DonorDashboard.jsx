@@ -47,7 +47,7 @@ const DonorDashboard = () => {
         </div>
       </div>
 
-      <div className="dashboard-links">
+      <div className="dashboard-linkks">
         <Link to="/add-donation" className="dashboard-link">Add Donation</Link>
         <Link to="/donation-history" className="dashboard-link">Donation History</Link>
         <Link to="/active-donations" className="dashboard-link">Active Donations</Link>

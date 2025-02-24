@@ -15,7 +15,7 @@ const VolunteerRegistration = () => {
     experience: "",
   });
 
-  const [message, setMessage] = useState(""); // Message state for success/error feedback
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -38,10 +38,7 @@ const VolunteerRegistration = () => {
         throw new Error("Failed to register volunteer");
       }
 
-      const data = await response.json();
-      console.log("Volunteer registered successfully:", data);
-
-      setMessage("Your volunteer registration has been submitted successfully!");
+      setIsPopupVisible(true);
       setFormData({
         name: "",
         age: "",
@@ -53,38 +50,35 @@ const VolunteerRegistration = () => {
         motivation: "",
         skills: "",
         experience: "",
-      }); // Reset form fields
-
+      });
     } catch (error) {
       console.error("Error submitting volunteer registration:", error);
-      setMessage("Error: Could not submit the form. Please try again later.");
     }
   };
 
   return (
     <div className="volunteer-container">
-      <h1>Volunteer Registration</h1>
-      <p>Join us in making a difference! Fill out the form below.</p>
+      <h1 className="volunteer-heading">Volunteer Registration</h1>
+<p className="volunteer-description">Join us in making a difference! Fill out the form below.</p>
 
-      {message && <p className="message">{message}</p>} {/* Display success/error message */}
 
       <form onSubmit={handleSubmit}>
-        <label>Name:</label>
+      <label className="volunteer-label">Name:</label>
         <input type="text" name="name" value={formData.name} onChange={handleChange} required />
 
-        <label>Age:</label>
+        <label className="volunteer-label">Age:</label>
         <input type="number" name="age" value={formData.age} onChange={handleChange} required />
 
-        <label>Phone Number:</label>
+        <label className="volunteer-label">Phone Number:</label>
         <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
 
-        <label>Email:</label>
+        <label className="volunteer-label">Email:</label>
         <input type="email" name="email" value={formData.email} onChange={handleChange} required />
 
-        <label>Current Location:</label>
+        <label className="volunteer-label">Current Location:</label>
         <input type="text" name="location" value={formData.location} onChange={handleChange} required />
 
-        <label>How many hours can you volunteer per week?</label>
+        <label className="volunteer-label">How many hours can you volunteer per week?</label>
         <select name="hoursPerWeek" value={formData.hoursPerWeek} onChange={handleChange} required>
           <option value="">Select</option>
           <option value="<3">Less than 3 hours</option>
@@ -93,7 +87,7 @@ const VolunteerRegistration = () => {
           <option value="9+">9 or more hours</option>
         </select>
 
-        <label>How many months can you commit to volunteering?</label>
+        <label className="volunteer-label">How many months can you commit to volunteering?</label>
         <select name="monthsCommitment" value={formData.monthsCommitment} onChange={handleChange} required>
           <option value="">Select</option>
           {[...Array(12)].map((_, i) => (
@@ -101,17 +95,27 @@ const VolunteerRegistration = () => {
           ))}
         </select>
 
-        <label>What skills do you bring to the platform?</label>
+        <label className="volunteer-label">What skills do you bring to the platform?</label>
         <input type="text" name="skills" value={formData.skills} onChange={handleChange} placeholder="E.g., Cooking, Logistics, Communication" />
 
-        <label>Do you have any prior volunteering experience?</label>
+        <label className="volunteer-label">Do you have any prior volunteering experience?</label>
         <textarea name="experience" value={formData.experience} onChange={handleChange} placeholder="Briefly describe your experience"></textarea>
 
-        <label>Why do you want to be a volunteer?</label>
+        <label className="volunteer-label">Why do you want to be a volunteer?</label>
         <textarea name="motivation" value={formData.motivation} onChange={handleChange} required></textarea>
 
         <button type="submit">Submit</button>
       </form>
+
+      {isPopupVisible && (
+        <div className="popup">
+          <div className="popup-content">
+            <h2>Thank You!</h2>
+            <p>Your volunteer registration has been submitted successfully.</p>
+            <button onClick={() => setIsPopupVisible(false)}>Close</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
