@@ -16,17 +16,12 @@ function CommunityFunding() {
   const handleClick = async () => {
     setLoading(true);
     try {
-      await axios
-        .post("http://localhost:8000/order", data)
-        .then((res) => {
-          console.log(res.data);
-          if (res.data.success === true) {
-            window.location.href = res.data.data.instrumentResponse.redirectInfo.url;
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      await axios.post("http://localhost:8000/order", data).then((res) => {
+        console.log(res.data);
+        if (res.data.success === true) {
+          window.location.href = res.data.data.instrumentResponse.redirectInfo.url;
+        }
+      });
     } catch (error) {
       console.log(error);
     }
@@ -34,12 +29,14 @@ function CommunityFunding() {
   };
 
   return (
-    <div className="funding-card">
-      <h2>Support the Community</h2>
-      <p>Your contribution helps us reduce food waste and support those in need.</p>
-      <button onClick={handleClick} className="donate-button">
-        {loading ? "Processing..." : "Donate Now"}
-      </button>
+    <div className="funding-container"> 
+      <div className="funding-card">
+        <h2>Support the Community</h2>
+        <p>Your contribution helps us reduce food waste and support those in need.</p>
+        <button onClick={handleClick} className="donate-button">
+          {loading ? "Processing..." : "Donate Now"}
+        </button>
+      </div>
     </div>
   );
 }

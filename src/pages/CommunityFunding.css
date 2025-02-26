@@ -1,4 +1,7 @@
 /* CommunityFunding.css */
+body{
+    background-color: #ffffff;
+}
 .funding-card {
     background: white;
     padding: 30px;
@@ -8,8 +11,76 @@
     max-width: 415px;
     width: 100%;
     margin-top: -508px;
+    margin-top: -43px;
   }
-  
+  /* Full-page background container */
+
+    .funding-container {
+        background: url('/public/funding_bg.jpg') no-repeat center center;
+        background-size: cover; /* Ensures it covers the entire screen */
+        height: 100vh; /* Full height of the viewport */
+        width: 92.6vw; /* Full width of the viewport */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: -570px;
+        margin-left: -30px;
+    }
+    
+
+/* Donation card styles */
+.funding-card {
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 415px;
+    width: 90%;
+}
+
+/* Heading */
+.funding-card h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Description */
+.funding-card p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Donate Button */
+.donate-button {
+    background-color: #ff5f6d;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.donate-button:hover {
+    background-color: #e04e5c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+    .funding-card {
+        width: 90%;
+        padding: 20px;
+    }
+    
+    .donate-button {
+        font-size: 16px;
+        padding: 10px 18px;
+    }
+}
+
   .funding-card h2 {
     color: #333;
     margin-bottom: 10px;
