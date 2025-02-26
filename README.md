@@ -1,4 +1,6 @@
 # SustainaBITE
+<img width="1440" alt="Screenshot 2025-02-26 at 8 17 15 PM" src="https://github.com/user-attachments/assets/75514891-de03-40f9-ae61-6b6f2efeeffd" />
+<img width="1440" alt="Screenshot 2025-02-26 at 8 17 37 PM" src="https://github.com/user-attachments/assets/997e6721-4786-4aed-b3ee-99e877aaec64" />
 
 
 # ABOUT THE PROJECT :
