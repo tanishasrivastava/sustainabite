@@ -1,53 +1,73 @@
 .dashboard-container {
-    padding: 20px;
-    text-align: center;
-    background-color: #f9f9f9;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 1450px;
-    height: 1536px;
-    margin-top: -774px;
-    margin-left: -100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 316vh;
+  background: linear-gradient(9deg, #11101d, #a777e3);
+  width: 183vh;
+  margin-left: -90px;
+
 }
-  .dashboard-heading {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 20px;
-  
-  }
-  
-  .dashboard-links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-left: -598px;
-    margin-top: 100px;
-    margin-left: -1072px;
-  }
-  
-  .dashboard-btn {
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: white;
-    background-color: #4caf50;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .dashboard-btn:hover {
-    background-color: #45a049;
-  }
-  
-  .dashboard-btn.logout {
-    background-color: #f44336;
-  }
-  
-  .dashboard-btn.logout:hover {
-    background-color: #d32f2f;
-  }
-  
+
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1155px;
+  margin-left: 61px;
+  position: relative;
+  top: -560px;
+}
+.profile-icon {
+  font-size: 90px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.dashboard-heading {
+  font-size: 2rem;
+  color: white;
+}
+
+.dashboard-links {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  width: 100%;
+  max-width: 250px;
+  margin-left: -980px;
+  top: 250px;
+}
+
+.dashboard-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.dashboard-btn:hover {
+  background-color: #45a049;
+}
+
+.dashboard-btn.logout {
+  background-color: #f44336;
+}
+
+.dashboard-btn.logout:hover {
+  background-color: #d32f2f;
+}
+
+.btn-icon {
+  font-size: 1.4rem;
+}

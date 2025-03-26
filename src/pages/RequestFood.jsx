@@ -1,87 +1,133 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import "./RequestFood.css";
 
 const RequestFood = () => {
   const [donations, setDonations] = useState([]);
-  const [sortOption, setSortOption] = useState("expiry");
-
-
-  // Fetch donations from backend
-  useEffect(() => {
-    axios.get("http://localhost:8081/api/donations")
-      .then((res) => setDonations(res.data))
-      .catch((err) => console.error("Error fetching donations:", err));
-  }, []);
-
-  // Handle sorting
-  const sortedDonations = [...donations].sort((a, b) => {
-    switch (sortOption) {
-      case "expiry":
-        return new Date(a.expiryDate) - new Date(b.expiryDate);
-      case "quantity":
-        return b.quantity - a.quantity;
-      case "perishable":
-        return a.perishable === "Yes" ? -1 : 1;
-      case "nonPerishable":
-        return a.perishable === "No" ? -1 : 1;
-      default:
-        return 0;
-    }
+  const [filteredDonations, setFilteredDonations] = useState([]);
+  const [sortOption, setSortOption] = useState("");
+  const [filterOptions, setFilterOptions] = useState({
+    isPacked: null,
+    isPerishable: null,
   });
 
-  // Handle food request
-  const handleRequest = async (foodId) => {
-    try {
-      const response = await axios.post("http://localhost:8081/api/request-food", {
-        foodId,
-        quantity: 1,  // Default quantity (can be dynamic later)
-      });
+  useEffect(() => {
+    fetchDonations();
+  }, []);
 
-      if (response.status === 200) {
-        alert("Request Sent Successfully!");
-      } else {
-        alert("Failed to send request.");
-      }
+  useEffect(() => {
+    applyFilters();
+  }, [donations, filterOptions, sortOption]);
+
+  const fetchDonations = async () => {
+    try {
+      const response = await axios.get("http://localhost:8081/api/donations");
+      setDonations(response.data);
+      setFilteredDonations(response.data);
     } catch (error) {
-      console.error("Error requesting food:", error);
-      alert("Error sending request.");
+      console.error("Error fetching donations:", error);
     }
   };
 
-  return (
-    <div className="request-food-container">
-      <h1>Available Food Donations</h1>
+  const handleRequest = (donationId) => {
+    alert(`Requested item with ID: ${donationId}`);
+  };
 
-      {/* Sorting Dropdown */}
-      <div className="sorting-options">
-        <label>Sort By:</label>
-        <select onChange={(e) => setSortOption(e.target.value)} value={sortOption}>
-          <option value="expiry">Expiry Date</option>
-          <option value="quantity">Quantity</option>
-          <option value="perishable">Perishable</option>
-          <option value="nonPerishable">Non-Perishable</option>
+  const handleSort = (option) => {
+    setSortOption(option);
+    let sortedData = [...filteredDonations];
+
+    switch (option) {
+      case "expiryCloseToFar":
+        sortedData.sort((a, b) => new Date(a.expiryDate) - new Date(b.expiryDate));
+        break;
+      case "expiryFarToClose":
+        sortedData.sort((a, b) => new Date(b.expiryDate) - new Date(a.expiryDate));
+        break;
+      case "quantityHighToLow":
+        sortedData.sort((a, b) => b.quantity - a.quantity);
+        break;
+      case "quantityLowToHigh":
+        sortedData.sort((a, b) => a.quantity - b.quantity);
+        break;
+      default:
+        break;
+    }
+    setFilteredDonations(sortedData);
+  };
+
+  const handleFilterChange = (filterType, value) => {
+    setFilterOptions((prev) => ({
+      ...prev,
+      [filterType]: value === "all" ? null : value === "true",
+    }));
+  };
+
+  const applyFilters = () => {
+    let filteredData = donations.filter((donation) => {
+      return (
+        (filterOptions.isPacked === null || donation.isPacked === filterOptions.isPacked) &&
+        (filterOptions.isPerishable === null || donation.isPerishable === filterOptions.isPerishable)
+      );
+    });
+    setFilteredDonations(filteredData);
+  };
+
+  return (
+    <div>
+      <h2 className="righteous-regulare">Request Food</h2>
+
+      {/* Sorting Options */}
+      <div className="sort-filter-container">
+        <select onChange={(e) => handleSort(e.target.value)} className="sort-dropdown">
+          <option value="">Sort By</option>
+          <option value="expiryCloseToFar">Expiry Date (Close to Far)</option>
+          <option value="expiryFarToClose">Expiry Date (Far to Close)</option>
+          <option value="quantityHighToLow">Quantity (High to Low)</option>
+          <option value="quantityLowToHigh">Quantity (Low to High)</option>
+        </select>
+
+        {/* Filtering Options */}
+        <select onChange={(e) => handleFilterChange("isPacked", e.target.value)} className="filter-dropdown">
+          <option value="all">All (Packed & Not Packed)</option>
+          <option value="true">Packed</option>
+          <option value="false">Not Packed</option>
+        </select>
+
+        <select onChange={(e) => handleFilterChange("isPerishable", e.target.value)} className="filter-dropdown">
+          <option value="all">All (Perishable & Non-Perishable)</option>
+          <option value="true">Perishable</option>
+          <option value="false">Non-Perishable</option>
         </select>
       </div>
 
-      {/* Food List */}
-      <div className="food-list">
-        {sortedDonations.length > 0 ? (
-          sortedDonations.map((food) => (
-            <div key={food._id} className="food-card">
-              <img src={food.imageUrl || "default-food.jpg"} alt={food.foodName} />
-              <div className="food-details">
-                <h2>{food.foodName}</h2>
-                <p><strong>Expiry:</strong> {food.expiryDate}</p>
-                <p><strong>Quantity:</strong> {food.quantity} {food.unit}</p>
-                <p><strong>Type:</strong> {food.perishable === "Yes" ? "Perishable" : "Non-Perishable"}</p>
-                <button onClick={() => handleRequest(food._id)}>Request Food</button>
-              </div>
-            </div>
-          ))
+      <div className="donation-history-container">
+        {filteredDonations.length === 0 ? (
+          <p className="text-gray-500 text-center">No donations available.</p>
         ) : (
-          <p>No donations available at the moment.</p>
+          <ul className="donation-listt">
+            {filteredDonations.map((donation) => (
+              <li key={donation.id} className="donation-item">
+                <img
+                  src={donation.imageUrl || "/placeholder.jpg"}
+                  alt={donation.foodName}
+                  className="donation-image"
+                />
+                <div className="donation-details">
+                  <p className="donation-name">{donation.foodName}</p>
+                  <p className="donation-info">Quantity: {donation.quantity} kg/pieces</p>
+                  <p className="donation-info">Perishable: {donation.isPerishable ? "Yes" : "No"}</p>
+                  <p className="donation-info">Packed Food: {donation.isPacked ? "Yes" : "No"}</p>
+                  <p className="donation-info">Expiry Date: {donation.expiryDate}</p>
+                  <p className="donation-info">Pickup Address: {donation.address}</p>
+                  <p className="donation-info">Item Added On: {new Date(donation.madeDate).toLocaleDateString()}</p>
+                  <button className="request-button" onClick={() => handleRequest(donation.id)}>
+                    Request This Item
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
         )}
       </div>
     </div>

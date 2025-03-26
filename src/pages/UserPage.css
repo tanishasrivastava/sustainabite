@@ -13,15 +13,23 @@
 }
 .p{
   font-size: 16px;
+  color: #eee;
 }
 /* Heading */
-.righteous-regular {
+.righteous-regularm {
   font-family: "Righteous", serif;
   font-weight: 700;
-  font-size: 66px;
-  color: #11101d;
-  margin-bottom: 20px;
+  font-size: 55px;
+  color: #4A235A;
+  text-transform: uppercase;
+  font-weight: bold;
   text-align: center;
+  position: sticky;  /* Keeps the heading visible */
+  top: 0;            /* Sticks it to the top */
+  background: white; /* Prevents overlap with other elements */
+  padding: 10px 0;
+  z-index: 1000;     /* Ensures it stays above other content */
+  margin-top: -600px;     /* Removes unwanted negative margin */
 }
 
 /* Interactive Container */
@@ -34,7 +42,7 @@
   max-width: 450px;
   width: 100%;
   transition: 0.4s ease-in-out;
-  margin-top: 100px;
+  margin-top: 800px;
 }
 
 /* Step Container */
@@ -47,9 +55,11 @@
 /* User Type & Authentication Selection */
 h2 {
   font-size: 1.8rem;
-  color: #444;
+  color: #ffffff;
 }
-
+.head{
+  color: #ffffff;
+}
 .options {
   display: flex;
   gap: 15px;

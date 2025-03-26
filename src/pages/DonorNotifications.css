@@ -1,0 +1,84 @@
+/* DonorNotifications.css */
+.notifications-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .notifications-container h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .notification-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border-left: 6px solid #4CAF50; /* Green highlight */
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .notification-card:hover {
+    transform: scale(1.02);
+    background: #f1f1f1;
+  }
+  
+  .notification-details {
+    flex: 1;
+  }
+  
+  .notification-details p {
+    margin: 5px 0;
+    color: #444;
+  }
+  
+  .notification-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .btn {
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .btn-accept {
+    background: #4CAF50;
+    color: white;
+  }
+  
+  .btn-accept:hover {
+    background: #388E3C;
+  }
+  
+  .btn-reject {
+    background: #FF4D4D;
+    color: white;
+  }
+  
+  .btn-reject:hover {
+    background: #D32F2F;
+  }
+  
+  .no-notifications {
+    text-align: center;
+    color: #777;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  

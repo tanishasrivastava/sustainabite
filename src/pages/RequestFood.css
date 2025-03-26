@@ -1,144 +1,122 @@
-/* RequestFood.css */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  display: flex
+;
+  justify-content: center;
+  align-items: center;
+  height: 316vh;
+}
+.donation-history-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
 
-.request-food-container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #f8f9fa;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .request-food-container h1 {
-    text-align: center;
-    color: #2c3e50;
-    margin-bottom: 20px;
-  }
-  
-  /* Sorting Dropdown */
-  .sorting-options {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-bottom: 20px;
-  }
-  
-  .sorting-options label {
-    font-size: 16px;
-    margin-right: 10px;
-    color: #34495e;
-    font-weight: bold;
-  }
-  
-  .sorting-options select {
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  /* Food List Container */
-  .food-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-height: 500px; /* Enables scrolling */
-    overflow-y: auto;
-    padding-right: 10px;
-  }
-  
-  /* Individual Food Card */
-  .food-card {
-    display: flex;
-    align-items: center;
-    background: white;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .food-card:hover {
-    transform: scale(1.02);
-  }
-  
-  /* Food Image */
-  .food-card img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-right: 20px;
-  }
-  
-  /* Food Details */
-  .food-details {
-    flex-grow: 1;
-  }
-  
-  .food-details h2 {
-    font-size: 20px;
-    color: #2c3e50;
-    margin-bottom: 5px;
-  }
-  
-  .food-details p {
-    font-size: 16px;
-    color: #555;
-    margin: 2px 0;
-  }
-  
-  /* Request Button */
-  .food-details button {
-    background: #28a745;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
-    transition: background 0.3s ease;
-  }
-  
-  .food-details button:hover {
-    background: #218838;
-  }
-  
-  /* Scrollbar Styling */
-  .food-list::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  .food-list::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  
-  .food-list::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 4px;
-  }
-  
-  .food-list::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .food-card {
+.righteous-regulare {
+  font-family: "Righteous", serif;
+  font-weight: 700;
+  font-size: 55px;
+  color: #4A235A;
+  text-transform: uppercase;
+  text-align: center;
+  background: white;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.sort-filter-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.sort-dropdown,
+.filter-dropdown {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.donation-item {
+  display: flex;
+  align-items: center;
+  background: #f5f5f5;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  width: 530px;
+  height: 300px;
+}
+
+.donation-item:hover {
+  transform: scale(1.02);
+}
+
+.donation-listt {
+  list-style: none;
+  padding: 0;
+  margin-top: 50px;
+  align-items: center;
+  margin-left: 130px;
+
+}
+.donation-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 20px;
+}
+
+.donation-details {
+  flex: 1;
+}
+
+.donation-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.donation-info {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 3px;
+}
+
+.request-button {
+  background: #28a745;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.request-button:hover {
+  background: #218838;
+}
+
+@media (max-width: 768px) {
+  .donation-item {
       flex-direction: column;
       align-items: flex-start;
-    }
-  
-    .food-card img {
-      width: 100%;
-      height: 150px;
-      margin-bottom: 10px;
-    }
-  
-    .sorting-options {
-      justify-content: center;
-    }
+      padding: 20px;
   }
-  
+
+  .donation-image {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+  }
+}

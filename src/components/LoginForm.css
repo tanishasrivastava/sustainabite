@@ -1,0 +1,104 @@
+.login-form {
+    width: 320px; /* Same as signup form */
+    background: #f5ebef; /* Light pinkish background */
+    padding: 18px;
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 90px;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for better visibility */
+  }
+  .signin-heading {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .label-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    margin-top: 8px;
+  }
+  .para {
+    color: #1a183e;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  
+  .divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 12px 0;
+  }
+  
+  .divider::before,
+  .divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .divider span {
+    padding: 0 6px;
+    color: #888;
+    font-size: 13px;
+  }
+  
+  .social-login {
+    width: 100%;
+    padding: 8px;
+    margin: 4px 0;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .google {
+    background: #1a183e;
+    border: 1px solid #ddd;
+    color: white;
+  }
+  
+  .phone {
+    background: #1a183e;
+    color: white;
+  }
+  
+  .google img {
+    margin-right: 6px;
+  }
+  
+  .forgot-password {
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    color: #c2185b;
+    text-decoration: none;
+    margin-top: 6px;
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: 8px;
+    background: #c2185b;
+    color: white;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  

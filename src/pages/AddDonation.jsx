@@ -9,6 +9,7 @@ const AddDonation = () => {
     address: "",
     notes: "",
     contact: "",
+    email: "", // Added email field
     image: null,
     foodType: "",
     packedFood: "",
@@ -17,23 +18,19 @@ const AddDonation = () => {
 
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
- 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
- 
   const handleFileChange = (e) => {
     setFormData({ ...formData, image: e.target.files[0] });
   };
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = new FormData();
 
-   
     Object.keys(formData).forEach((key) => {
       if (formData[key]) {
         data.append(key, formData[key]);
@@ -43,14 +40,13 @@ const AddDonation = () => {
     try {
       const response = await fetch("http://localhost:8081/api/donations/submit", {
         method: "POST",
-        body: data, 
+        body: data,
       });
 
       if (!response.ok) {
         throw new Error("Failed to submit donation");
       }
 
-      // Show popup on success
       setIsPopupVisible(true);
       setFormData({
         foodName: "",
@@ -59,6 +55,7 @@ const AddDonation = () => {
         address: "",
         notes: "",
         contact: "",
+        email: "", // Reset email field
         image: null,
         foodType: "",
         packedFood: "",
@@ -110,13 +107,15 @@ const AddDonation = () => {
         <label>Contact Information:</label>
         <input type="text" name="contact" value={formData.contact} onChange={handleChange} required />
 
+        <label>Email:</label>
+        <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+
         <label>Upload Image (Optional):</label>
         <input type="file" onChange={handleFileChange} />
 
         <button type="submit">Submit Donation</button>
       </form>
 
-      {/* Popup Modal */}
       {isPopupVisible && (
         <div className="popup">
           <div className="popup-content">
