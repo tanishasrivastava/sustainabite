@@ -3,7 +3,8 @@
 <img width="1440" alt="Screenshot 2025-02-26 at 8 17 37 PM" src="https://github.com/user-attachments/assets/997e6721-4786-4aed-b3ee-99e877aaec64" />
 <img width="1440" alt="Screenshot 2025-02-26 at 8 23 50 PM" src="https://github.com/user-attachments/assets/f26dd09e-abe2-4046-ba4f-086a9eaf9ab4" />
 <img width="1440" alt="Screenshot 2025-02-26 at 8 24 23 PM" src="https://github.com/user-attachments/assets/288a1941-7f88-4e1d-8c51-585185d082d9" />
-![Uploading Screenshot 2025-02-26 at 8.25.18 PM.png…]()
+<img width="1440" alt="Screenshot 2025-03-26 at 11 01 56 PM" src="https://github.com/user-attachments/assets/beff2e07-b013-4240-8bb3-7c1f2e303b37" />
+<img width="1440" alt="Screenshot 2025-03-26 at 11 04 31 PM" src="https://github.com/user-attachments/assets/28ea0160-5cef-4819-ab43-15dda9640700" />
 
 
 # ABOUT THE PROJECT :
