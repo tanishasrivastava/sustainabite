@@ -24,12 +24,12 @@
   text-transform: uppercase;
   font-weight: bold;
   text-align: center;
-  position: sticky;  /* Keeps the heading visible */
-  top: 0;            /* Sticks it to the top */
-  background: white; /* Prevents overlap with other elements */
+  position: sticky;  
+  top: 0;            
+  background: white;
   padding: 10px 0;
-  z-index: 1000;     /* Ensures it stays above other content */
-  margin-top: -600px;     /* Removes unwanted negative margin */
+  z-index: 1000;    
+  margin-top: -1452px;
 }
 
 /* Interactive Container */
@@ -42,7 +42,7 @@
   max-width: 450px;
   width: 100%;
   transition: 0.4s ease-in-out;
-  margin-top: 800px;
+  margin-top: 398px;
 }
 
 /* Step Container */
