@@ -7,6 +7,7 @@
     text-align: center;
     min-height: 100vh;
     margin-left: -30px;
+    height: 353vh;
     
   }
   
@@ -28,6 +29,7 @@
     padding: 10px;
     width: 1412px;
     margin-left: -126px;
+    height: 321vh;
   }
   
   .home-section h1 {
@@ -36,6 +38,7 @@
     font-weight: bold;
     margin-bottom: 20px;
     margin-left: -40px;
+    margin-top: -1090px;
   }
   
   .home-section p {

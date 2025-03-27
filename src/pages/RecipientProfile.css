@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 173vh;
+    height: 316vh;
     width: 183vh;
     margin-left: -70px;
     background: linear-gradient(to right, #f9f9f9, #e3f2fd);
@@ -15,7 +15,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     width: 350px;
-    margin-top: -800px;
+    margin-top: -1906px;
   }
   
   .profile-pic {
