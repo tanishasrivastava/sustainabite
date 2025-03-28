@@ -18,9 +18,14 @@ const Home = () => {
         <div className="home-background">
           <Slideshow /> {/* Replace static image with the Slideshow */}
         </div>
-
+        <h2 className="righteous-regulark">Know More About US</h2>
         {/* Accordion Section */}
         <Accordion />
+        {/* Lifetime Numbers Image Section */}
+<div className="lifetime-numbers">
+  <img src="public/home_1.png" alt="SustainaBITE Lifetime Numbers" />
+</div>
+
       </div>
 
       <Footer />

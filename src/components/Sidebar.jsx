@@ -47,9 +47,9 @@ const Sidebar = () => {
             <span className="tooltip">About</span>
           </li>
           <li>
-            <a href="#">
+          <a href="/feedback">
               <i className="bx bx-pie-chart-alt-2"></i>
-              <span className="links_name">Analytics</span>
+              <span className="links_name">Feedback</span>
             </a>
             <span className="tooltip">Analytics</span>
           </li>
@@ -81,13 +81,7 @@ const Sidebar = () => {
             </a>
             <span className="tooltip">Become A Volunteer</span>
           </li>
-          <li>
-            <a href="/feedback">
-              <i className="bx bx-cog"></i>
-              <span className="links_name">Feedback </span>
-            </a>
-            <span className="tooltip">Feedback</span>
-          </li>
+         
           <li className="profile">
             <div className="profile-details">
               <i className="bx bx-export"></i>

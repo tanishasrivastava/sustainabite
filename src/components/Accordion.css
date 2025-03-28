@@ -5,14 +5,14 @@
 .accordion {
     position: sticky;
     z-index: 100;
-    max-width: 730px;
+    max-width: 773px;
     width: 100%;
     margin: 30px auto;
     padding: 15px;
     background: #ffffff;
     border-radius: 8px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-    margin-left: 192px;
+    margin-left: 155px;
     margin-top: 50px;
 }
 

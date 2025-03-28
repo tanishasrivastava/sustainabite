@@ -25,7 +25,9 @@ body {
 h2 {
   color: #f0eaea;
 }
-
+.white{
+  color: #eee;
+}
 p {
   font-size: 14px;
   color: #dfb3e8;

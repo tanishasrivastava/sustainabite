@@ -16,14 +16,19 @@ const RequestFood = () => {
   }, []);
 
   useEffect(() => {
-    applyFilters();
+    applyFiltersAndSort();
   }, [donations, filterOptions, sortOption]);
 
   const fetchDonations = async () => {
     try {
       const response = await axios.get("http://localhost:8081/api/donations");
-      setDonations(response.data);
-      setFilteredDonations(response.data);
+      // Convert packed & perishable values to proper booleans
+      const formattedDonations = response.data.map((donation) => ({
+        ...donation,
+        isPacked: donation.isPacked === "true" || donation.isPacked === true,
+        isPerishable: donation.isPerishable === "true" || donation.isPerishable === true,
+      }));
+      setDonations(formattedDonations);
     } catch (error) {
       console.error("Error fetching donations:", error);
     }
@@ -35,25 +40,6 @@ const RequestFood = () => {
 
   const handleSort = (option) => {
     setSortOption(option);
-    let sortedData = [...filteredDonations];
-
-    switch (option) {
-      case "expiryCloseToFar":
-        sortedData.sort((a, b) => new Date(a.expiryDate) - new Date(b.expiryDate));
-        break;
-      case "expiryFarToClose":
-        sortedData.sort((a, b) => new Date(b.expiryDate) - new Date(a.expiryDate));
-        break;
-      case "quantityHighToLow":
-        sortedData.sort((a, b) => b.quantity - a.quantity);
-        break;
-      case "quantityLowToHigh":
-        sortedData.sort((a, b) => a.quantity - b.quantity);
-        break;
-      default:
-        break;
-    }
-    setFilteredDonations(sortedData);
   };
 
   const handleFilterChange = (filterType, value) => {
@@ -63,21 +49,43 @@ const RequestFood = () => {
     }));
   };
 
-  const applyFilters = () => {
+  const applyFiltersAndSort = () => {
     let filteredData = donations.filter((donation) => {
       return (
-        (filterOptions.isPacked === null || donation.isPacked === filterOptions.isPacked) &&
-        (filterOptions.isPerishable === null || donation.isPerishable === filterOptions.isPerishable)
+        (filterOptions.isPacked === null || donation.isPacked === (filterOptions.isPacked === "true")) &&
+        (filterOptions.isPerishable === null || donation.isPerishable === (filterOptions.isPerishable === "true"))
       );
     });
-    setFilteredDonations(filteredData);
+
+    let sortedData = [...filteredData]; // Copy array to prevent mutation
+
+    if (sortOption) {
+      switch (sortOption) {
+        case "expiryCloseToFar":
+          sortedData.sort((a, b) => new Date(a.expiryDate) - new Date(b.expiryDate));
+          break;
+        case "expiryFarToClose":
+          sortedData.sort((a, b) => new Date(b.expiryDate) - new Date(a.expiryDate));
+          break;
+        case "quantityHighToLow":
+          sortedData.sort((a, b) => Number(b.quantity) - Number(a.quantity));
+          break;
+        case "quantityLowToHigh":
+          sortedData.sort((a, b) => Number(a.quantity) - Number(b.quantity));
+          break;
+        default:
+          break;
+      }
+    }
+
+    setFilteredDonations([...sortedData]); // Ensure proper re-render
   };
 
   return (
     <div>
-      <h2 className="righteous-regulare">Request Food</h2>
+      <h2 className="righteous-regularrq">Request Food</h2>
 
-      {/* Sorting Options */}
+      {/* Sorting & Filtering Options */}
       <div className="sort-filter-container">
         <select onChange={(e) => handleSort(e.target.value)} className="sort-dropdown">
           <option value="">Sort By</option>
@@ -87,7 +95,6 @@ const RequestFood = () => {
           <option value="quantityLowToHigh">Quantity (Low to High)</option>
         </select>
 
-        {/* Filtering Options */}
         <select onChange={(e) => handleFilterChange("isPacked", e.target.value)} className="filter-dropdown">
           <option value="all">All (Packed & Not Packed)</option>
           <option value="true">Packed</option>
@@ -101,6 +108,7 @@ const RequestFood = () => {
         </select>
       </div>
 
+      {/* Donations List */}
       <div className="donation-history-container">
         {filteredDonations.length === 0 ? (
           <p className="text-gray-500 text-center">No donations available.</p>

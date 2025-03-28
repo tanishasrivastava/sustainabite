@@ -48,8 +48,8 @@ const Feedback = () => {
   return (
     <div className="container">
       <div className="modal-content">
-        <h2>FEEDBACK FORM</h2>
-        <p>We value your opinion. Share your thoughts and help us improve!</p>
+        <h2 className="white">FEEDBACK FORM</h2>
+        <p className="white">We value your opinion. Share your thoughts and help us improve!</p>
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -68,7 +68,7 @@ const Feedback = () => {
           </div>
 
           <div className="rating">
-            <h2>Rate Our Service:</h2>
+            <h2 className="white">Rate Our Service:</h2>
             <div className="star-rating">
               {[1, 2, 3, 4, 5].map((star) => (
                 <FaStar

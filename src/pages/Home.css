@@ -10,6 +10,12 @@
     height: 353vh;
     
   }
+  .righteous-regulark {
+    font-family: "Righteous", serif;
+    font-weight: 409;
+    font-style: bold;
+    font-size: 50px;
+}
   
   .slideshow-container {
     width: 100%;
@@ -22,6 +28,28 @@
     height: 100%;
     object-fit: cover;
   }
+  .lifetime-numbers {
+    width: 100vw; /* Full viewport width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 102px 0;
+}
+
+.lifetime-numbers img {
+    width: 100%; /* Ensure full width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Prevent distortion */
+}
+@media (max-width: 768px) {
+  .lifetime-numbers img {
+      width: 100%;
+      height: auto;
+  }
+}
+
+
   
  /* Styling for the home section */
 .home-section {
@@ -38,7 +66,7 @@
     font-weight: bold;
     margin-bottom: 20px;
     margin-left: -40px;
-    margin-top: -1090px;
+    margin-top: -309px;
   }
   
   .home-section p {

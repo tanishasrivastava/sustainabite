@@ -22,19 +22,28 @@ const RecipientDashboard = () => {
         <FaUser className="profile-icon" />
         <h1 className="dashboard-heading">Welcome, {recipientName}!</h1>
       </div>
-      <div className="dashboard-links">
-        <button onClick={() => handleNavigate("/request-food")} className="dashboard-btn">
-          <FaUtensils className="btn-icon" /> Request Food
-        </button>
-        <button onClick={() => handleNavigate("/received-history")} className="dashboard-btn">
-          <FaHistory className="btn-icon" /> Received History
-        </button>
-        <button onClick={() => handleNavigate("/profile")} className="dashboard-btn">
-          <FaUser className="btn-icon" /> Profile
-        </button>
-        <button onClick={handleLogout} className="dashboard-btn logout">
-          <FaSignOutAlt className="btn-icon" /> Logout
-        </button>
+
+      <div className="dashboard-content">
+        {/* Left: Dashboard Links */}
+        <div className="dashboard-links">
+          <button onClick={() => handleNavigate("/request-food")} className="dashboard-btn">
+            <FaUtensils className="btn-icon" /> Request Food
+          </button>
+          <button onClick={() => handleNavigate("/received-history")} className="dashboard-btn">
+            <FaHistory className="btn-icon" /> Received History
+          </button>
+          <button onClick={() => handleNavigate("/profile")} className="dashboard-btn">
+            <FaUser className="btn-icon" /> Profile
+          </button>
+          <button onClick={handleLogout} className="dashboard-btn logout">
+            <FaSignOutAlt className="btn-icon" /> Logout
+          </button>
+        </div>
+
+        {/* Right: Image */}
+        <div className="dashboard-image">
+          <img src="/public/recdash.jpg" alt="Recipient Dashboard" />
+        </div>
       </div>
     </div>
   );

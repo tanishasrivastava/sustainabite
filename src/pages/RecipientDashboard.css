@@ -1,23 +1,31 @@
 .dashboard-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   height: 316vh;
   background: linear-gradient(9deg, #11101d, #a777e3);
-  width: 183vh;
-  margin-left: -90px;
-
+  width: 179vh;
+  padding-top: 20px;
+  margin-left: -50px;
+}
+/* Image Styling */
+.dashboard-image img {
+  width: 730px;
+  height: auto; /* Keeps aspect ratio */
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  margin-left: -669px;
+  margin-top: -160px;
+  position: absolute;
 }
 
 .profile-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 1155px;
-  margin-left: 61px;
-  position: relative;
-  top: -560px;
+  margin-bottom: 20px;
 }
+
 .profile-icon {
   font-size: 90px;
   color: #ffffff;
@@ -29,15 +37,20 @@
   color: white;
 }
 
+.dashboard-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 1200px;
+}
+
 .dashboard-links {
-  position: absolute;
   display: flex;
   flex-direction: column;
-  gap: 0px;
-  width: 100%;
+  gap: 15px;
   max-width: 250px;
-  margin-left: -980px;
-  top: 250px;
+  margin-top: 100px;
 }
 
 .dashboard-btn {
@@ -71,3 +84,4 @@
 .btn-icon {
   font-size: 1.4rem;
 }
+
