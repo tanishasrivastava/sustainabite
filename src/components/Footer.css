@@ -23,3 +23,6 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+.white{
+    color: #ffffff;
+}

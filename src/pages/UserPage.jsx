@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SignupForm from "../components/SignupForm";
 import LoginForm from "../components/LoginForm"; // Import login form component
 import "./UserPage.css";
-
+import Footer from "../components/Footer"
 const UserPage = () => {
   const [userType, setUserType] = useState(""); // "donor" or "recipient"
   const [actionType, setActionType] = useState(""); // "login" or "signup"
@@ -59,6 +59,9 @@ const UserPage = () => {
               </div>
             </div>
           )}
+
+          {/* Add Footer Here */}
+      <Footer />
         </div>
       )}
     </div>
