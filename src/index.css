@@ -26,7 +26,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  min-width: 321px;
   min-height: 100vh;
 }
 
@@ -86,7 +86,7 @@ button:focus-visible {
 }
 
 .sidebar.open {
-  width: 250px;
+  width: 251px;
 }
 
 .sidebar .logo-details {
