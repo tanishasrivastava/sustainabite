@@ -54,7 +54,7 @@ const DonorDashboard = () => {
         <Link to="/active-donations" className="dashboard-link">Active Donations</Link>
         <Link to="/donor-notifications" className="dashboard-link">Notifications</Link>
         <Link to="/donor-profile" className="dashboard-link">Profile</Link>
-        <Link to="/support" className="dashboard-link">Help/Support</Link>
+      
         <Link to="/" className="dashboard-link logout" onClick={() => localStorage.clear()}>
           Logout
         </Link>

@@ -57,7 +57,7 @@ const RequestFood = () => {
       );
     });
 
-    let sortedData = [...filteredData]; // Copy array to prevent mutation
+    let sortedData = [...filteredData];
 
     if (sortOption) {
       switch (sortOption) {
@@ -115,7 +115,7 @@ const RequestFood = () => {
         ) : (
           <ul className="donation-listt">
             {filteredDonations.map((donation) => (
-              <li key={donation.id} className="donation-item">
+              <li key={donation.id} className="donation-itemm">
                 <img
                   src={donation.imageUrl || "/placeholder.jpg"}
                   alt={donation.foodName}

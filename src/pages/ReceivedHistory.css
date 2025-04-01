@@ -1,0 +1,46 @@
+.received-history-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #957777;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    margin-top: -1200px;
+  }
+  
+  h2 {
+    color: #000000;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .info-text {
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 20px;
+  }
+  
+  .donation-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .donation-item {
+    background: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .donation-item p {
+    font-size: 16px;
+    color: #444;
+  }
+  
+  .no-donations {
+    font-size: 16px;
+    color: #888;
+  }
+  

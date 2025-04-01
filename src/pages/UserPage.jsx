@@ -60,8 +60,7 @@ const UserPage = () => {
             </div>
           )}
 
-          {/* Add Footer Here */}
-      <Footer />
+      
         </div>
       )}
     </div>

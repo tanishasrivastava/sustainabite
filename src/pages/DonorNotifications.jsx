@@ -1,50 +1,79 @@
-import React, { useEffect, useState } from "react";
-import io from "socket.io-client";
-
-const socket = io("http://localhost:8081");
+import React, { useState } from "react";
+import "./DonorNotifications.css";
 
 const DonorNotifications = () => {
-  const [notifications, setNotifications] = useState([]);
+  // Dummy food requests
+  const [requests, setRequests] = useState([
+    {
+      id: 1,
+      recipientName: "Rahul Sharma",
+      foodItem: "Rice & Dal",
+      quantity: "5 kg",
+      requestDate: "March 30, 2025",
+    },
+    {
+      id: 2,
+      recipientName: "Neha Verma",
+      foodItem: "Fruits & Vegetables",
+      quantity: "3 kg",
+      requestDate: "March 29, 2025",
+    },
+    {
+      id: 3,
+      recipientName: "Amit Gupta",
+      foodItem: "Bread & Butter",
+      quantity: "2 packs",
+      requestDate: "March 28, 2025",
+    },
+  ]);
 
-  useEffect(() => {
-    fetchNotifications();
-    socket.emit("joinRoom", localStorage.getItem("userEmail"));
+  const [popupMessage, setPopupMessage] = useState("");
 
-    socket.on("newRequest", (notification) => {
-      setNotifications((prev) => [...prev, notification]);
-    });
+  const handleAcceptRequest = (id) => {
+    const updatedRequests = requests.filter((request) => request.id !== id);
+    setRequests(updatedRequests);
+    setPopupMessage("User request accepted for food item ✅");
 
-    return () => {
-      socket.off("newRequest");
-    };
-  }, []);
-
-  const fetchNotifications = async () => {
-    const response = await fetch(`http://localhost:8081/api/notifications/${localStorage.getItem("userEmail")}`);
-    const data = await response.json();
-    setNotifications(data);
+    setTimeout(() => {
+      setPopupMessage("");
+    }, 2000);
   };
 
-  const handleResponse = async (id, status) => {
-    await fetch(`http://localhost:8081/api/notifications/update-request/${id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ status }),
-    });
-
-    setNotifications(notifications.filter((n) => n._id !== id));
+  const handleRejectRequest = (id) => {
+    const updatedRequests = requests.filter((request) => request.id !== id);
+    setRequests(updatedRequests);
   };
 
   return (
-    <div>
-      <h2>Notifications</h2>
-      {notifications.map((notif) => (
-        <div key={notif._id}>
-          <p>{notif.recipientEmail} requested {notif.itemName}</p>
-          <button onClick={() => handleResponse(notif._id, "Accepted")}>Accept</button>
-          <button onClick={() => handleResponse(notif._id, "Rejected")}>Reject</button>
-        </div>
-      ))}
+    <div className="notifications-container">
+      <h2>Donor Notifications</h2>
+      <p className="info-text">Here are the food requests made by recipients.</p>
+
+      {popupMessage && <div className="popup">{popupMessage}</div>}
+
+      {requests.length === 0 ? (
+        <p className="no-requests">No new requests at the moment.</p>
+      ) : (
+        <ul className="request-list">
+          {requests.map((request) => (
+            <li key={request.id} className="request-item">
+              <p>
+                <strong>{request.recipientName}</strong> requested for{" "}
+                <strong>{request.foodItem}</strong> ({request.quantity}) on{" "}
+                {request.requestDate}.
+              </p>
+              <div className="button-group">
+                <button className="accept-btn" onClick={() => handleAcceptRequest(request.id)}>
+                  ✅ Accept Request
+                </button>
+                <button className="reject-btn" onClick={() => handleRejectRequest(request.id)}>
+                  ❌ Reject Request
+                </button>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

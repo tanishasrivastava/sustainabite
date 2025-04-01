@@ -51,22 +51,11 @@ const Sidebar = () => {
               <i className="bx bx-pie-chart-alt-2"></i>
               <span className="links_name">Feedback</span>
             </a>
-            <span className="tooltip">Analytics</span>
+            <span className="tooltip">Feedback</span>
           </li>
-          <li>
-            <a href="#">
-              <i className="bx bx-folder"></i>
-              <span className="links_name">File Manager</span>
-            </a>
-            <span className="tooltip">Files</span>
-          </li>
-          <li>
-            <a href="#">
-              <i className="bx bx-cart-alt"></i>
-              <span className="links_name">Order</span>
-            </a>
-            <span className="tooltip">Order</span>
-          </li>
+          
+     
+            
           <li>
             <a href="/community-funding">
               <i className="bx bx-heart"></i>

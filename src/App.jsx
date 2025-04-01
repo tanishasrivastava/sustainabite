@@ -20,19 +20,22 @@ import DonationHistory from "./pages/DonationHistory";
 import RecipientProfile from "./pages/RecipientProfile";
 import DonorProfile from "./pages/DonorProfile";
 import DonorNotifications from "./pages/DonorNotifications"; 
+import ActiveDonations from "./pages/ActiveDonations";
+import ReceivedHistory from "./pages/ReceivedHistory";
+
 
 const App = () => {
   const [loading, setLoading] = useState(true);
   const [userEmail, setUserEmail] = useState(null); 
 
   useEffect(() => {
-    // ✅ Retrieve email from localStorage (if stored after login)
+
     const email = localStorage.getItem("userEmail");
     if (email) {
       setUserEmail(email);
     }
 
-    // Simulate the loading state
+   
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);
@@ -55,10 +58,10 @@ const App = () => {
                 <Route path="/phone-otp" element={<PhoneOTP />} />
                 <Route path="/otp-verification" element={<OTPVerification />} />
                 <Route path="/donor-dashboard" element={<DonorDashboard />} />
-                <Route path="/donation-history" element={<DonationHistory userEmail={userEmail} />} /> {/* ✅ Pass userEmail */}
+                <Route path="/donation-history" element={<DonationHistory userEmail={userEmail} />} /> 
                 <Route path="/add-donation" element={<AddDonation />} />
                 <Route path="/recipient-dashboard" element={<RecipientDashboard />} />
-                <Route path="/profile" element={<RecipientProfile />} /> {/* ✅ New Route */}
+                <Route path="/profile" element={<RecipientProfile />} /> 
                 <Route path="/donor-profile" element={<DonorProfile />} /> 
                 <Route path="/about" element={<About />} />
                 <Route path="/feedback" element={<Feedback />} />
@@ -66,6 +69,8 @@ const App = () => {
                 <Route path="/community-funding" element={<CommunityFunding />} />
                 <Route path="/request-food" element={<RequestFood />} />
                 <Route path="/donor-notifications" element={<DonorNotifications />} />
+                <Route path="/active-donations" element={<ActiveDonations />} />
+                <Route path="/received-history" element={<ReceivedHistory />} />
               </Routes>
             </div>
           </div>
