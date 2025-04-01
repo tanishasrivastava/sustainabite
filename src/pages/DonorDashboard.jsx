@@ -36,15 +36,15 @@ const DonorDashboard = () => {
       <div className="dashboard-metrics">
         <div className="metric-card">
           <h3>Total Donations</h3>
-          <p>{totalDonations}</p>
+          <p>2</p>
         </div>
         <div className="metric-card">
           <h3>Meals Saved</h3>
-          <p>{mealsSaved}</p>
+          <p>4</p>
         </div>
         <div className="metric-card">
           <h3>Environmental Impact</h3>
-          <p>{totalDonations * 1} kg CO₂ saved</p>
+          <p>10 kg CO₂ saved</p>
         </div>
       </div>
 

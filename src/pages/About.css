@@ -1,51 +1,119 @@
-.about-page {
-    padding: 20px;
-    font-family: 'Poppins', sans-serif;
-    color: #333;
-    line-height: 1.6;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    margin-top: -1230px;
-    margin: 30px auto;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 646px;
-    width: 1360px;
-    margin-left: -34px;
+.about-container {
+  font-family: "Arial", sans-serif;
+  color: #333;
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  margin-top: -350px;
+}
 
-  }
-  .righteous-regular {
-    font-family: "Righteous", serif;
-    font-weight: 409;
-    font-style: bold;
-    font-size: 29px;
-  }
-  
-  
-  .about-page h1 {
-    font-size: 2.5rem;
-    color: #841e4a;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  
-  .about-page h2 {
-    font-size: 1.8rem;
-    color: #841e4a;
-    margin-top: 20px;
-  }
-  
-  .about-page p {
-    font-size: 1.1rem;
-    margin: 10px 0;
-  }
-  
-  .about-page ul {
-    list-style: disc;
-    margin: 15px 20px;
-  }
-  
-  .about-page ul li {
-    font-size: 1.1rem;
-    margin: 5px 0;
-  }
-  
+.hero-section {
+  position: relative;
+  text-align: center;
+}
+
+.hero-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background:#ffff;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  padding: -2px;
+}
+
+.highlight {
+  color: #ff9800;
+}
+
+
+section {
+  margin: 40px 0;
+}
+
+.about1{
+  color: #ff9800;
+  border-bottom: 2px solid #ff9800;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* Steps Styling */
+.steps-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.step {
+  width: 45%;
+  background:#e8deec;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 10px;
+  text-align: left;
+}
+
+
+.role-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.role {
+  width: 45%;
+  padding: 20px;
+  background: #dce1f3;
+  border-radius: 10px;
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  padding: 10px;
+  background: #e8e8e800;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+/* Join Us */
+.join-us {
+  background: #ff9800;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.cta-button {
+  padding: 10px 20px;
+  background: rgb(11, 10, 15);
+  color: #ff9800;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.cta-button:hover {
+  background: #333;
+  color: white;
+}
