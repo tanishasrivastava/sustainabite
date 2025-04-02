@@ -23,7 +23,7 @@ const Home = () => {
         <Accordion />
         {/* Lifetime Numbers Image Section */}
 <div className="lifetime-numbers">
-  <img src="public/home_1.png" alt="SustainaBITE Lifetime Numbers" />
+  <img src="/home_1.png" alt="SustainaBITE Lifetime Numbers" />
 </div>
 
       </div>
