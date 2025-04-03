@@ -61,7 +61,7 @@ const About = () => {
         <div className="role-container">
           <div className="role">
             <h3>🛒 Become a Donor</h3>
-            <p>Have surplus food? List it on SustainaBite and help reduce waste!</p>
+            <p>Have surplus food? List it on SustainaBite and help reduce the waste!</p>
             <ul>
               <li>📋 Register as a donor</li>
               <li>📍 Add food donation details</li>
