@@ -52,6 +52,23 @@ const Sidebar = () => {
               <span className="links_name">Feedback</span>
             </a>
             <span className="tooltip">Feedback</span>
+<<<<<<< HEAD
+=======
+          </li>
+          <li>
+            <a href="#">
+              <i className="bx bx-folder"></i>
+              <span className="links_name">File Manager</span>
+            </a>
+            <span className="tooltip">Files</span>
+          </li>
+          <li>
+            <a href="#">
+              <i className="bx bx-cart-alt"></i>
+              <span className="links_name">Order</span>
+            </a>
+            <span className="tooltip">Order</span>
+>>>>>>> c87ae4e (Updated the sidebar and phoneotp page)
           </li>
           
      

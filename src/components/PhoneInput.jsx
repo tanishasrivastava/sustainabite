@@ -8,9 +8,9 @@ const PhoneInput = ({ userType }) => {
 
   const handleSendOtp = () => {
     if (phoneNumber.length === 10) {
-      const otp = Math.floor(100000 + Math.random() * 900000); // Generate 6-digit OTP
-      localStorage.setItem("otp", otp); // Store OTP temporarily
-      alert(`OTP sent to ${phoneNumber}: ${otp}`); // Simulate OTP send
+      const otp = Math.floor(100000 + Math.random() * 900000); 
+      localStorage.setItem("otp", otp); 
+      alert(`OTP sent to ${phoneNumber}: ${otp}`); 
       navigate("/verify-otp", { state: { userType, phoneNumber } });
     } else {
       alert("Please enter a valid 10-digit phone number.");

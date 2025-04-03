@@ -57,7 +57,7 @@ const LoginForm = ({ userType }) => {
         return;
       }
 
-      // Store user details in localStorage
+      
       localStorage.setItem("token", data.token);
       localStorage.setItem("userName", data.name || "User");
       localStorage.setItem("userType", userType);
@@ -65,7 +65,7 @@ const LoginForm = ({ userType }) => {
 
       alert("Login successful!");
 
-      // Redirect user based on userType
+      
       navigate(userType === "donor" ? "/donor-dashboard" : "/recipient-dashboard");
     } catch (error) {
       console.error("Network error:", error);

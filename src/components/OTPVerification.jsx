@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { auth } from "../firebase/firebaseConfig"; // Ensure you have the correct path
+import { auth } from "../firebase/firebaseConfig"; 
 import "./OTPVerification.css";
 
 const OTPVerification = () => {
@@ -8,7 +8,7 @@ const OTPVerification = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
-  const confirmationResult = JSON.parse(localStorage.getItem("confirmationResult")); // Retrieve Firebase confirmation result
+  const confirmationResult = JSON.parse(localStorage.getItem("confirmationResult")); 
 
   const handleChange = (element, index) => {
     const value = element.value;
@@ -18,16 +18,16 @@ const OTPVerification = () => {
       newOtp[index] = value;
       setOtp(newOtp);
 
-      // Auto-focus on the next input
+     
       if (index < 5) {
         document.getElementById(`otp-input-${index + 1}`).focus();
       }
     } else if (value === "") {
-      // Clear the current input value
+      
       newOtp[index] = "";
       setOtp(newOtp);
 
-      // Move focus to the previous input on backspace
+      
       if (index > 0) {
         document.getElementById(`otp-input-${index - 1}`).focus();
       }
@@ -53,11 +53,11 @@ const OTPVerification = () => {
 
     try {
       if (confirmationResult) {
-        // Verify OTP using Firebase
+        
         await confirmationResult.confirm(enteredOtp);
         alert("OTP Verified Successfully!");
 
-        // Navigate to the appropriate dashboard
+       
         const userType = location.state?.userType;
         if (userType === "recipient") {
           navigate("/recipient-dashboard");
