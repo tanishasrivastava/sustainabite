@@ -70,7 +70,7 @@ const About = () => {
             </ul>
           </div>
           <div className="role">
-            <h3>🍽️ Become a Recipient</h3>
+            <h3>🍽️ Become A Recipient</h3>
             <p>Need food for your NGO or community? Sign up & request donations.</p>
             <ul>
               <li>🔹 Register as a recipient</li>
