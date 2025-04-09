@@ -7,7 +7,7 @@ const DonorProfile = () => {
     email: localStorage.getItem("donorEmail") || "donor@example.com",
     contact: localStorage.getItem("donorContact") || "8595612366",
     address: localStorage.getItem("donorAddress") || "ABC-2,Delhi,India",
-    profilePic: localStorage.getItem("donorProfilePic") || "https://via.placeholder.com/150"
+    profilePic: localStorage.getItem("donorProfilePic") || "https://picsum.photos/seed/picsum/200/300"
   });
 
   const [isEditing, setIsEditing] = useState(false);
