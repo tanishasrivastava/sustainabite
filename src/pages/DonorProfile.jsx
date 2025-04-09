@@ -5,8 +5,8 @@ const DonorProfile = () => {
   const [donor, setDonor] = useState({
     name: localStorage.getItem("donorName") || "Donor",
     email: localStorage.getItem("donorEmail") || "donor@example.com",
-    contact: localStorage.getItem("donorContact") || "Not Provided",
-    address: localStorage.getItem("donorAddress") || "Not Provided",
+    contact: localStorage.getItem("donorContact") || "8595612366",
+    address: localStorage.getItem("donorAddress") || "ABC-2,Delhi,India",
     profilePic: localStorage.getItem("donorProfilePic") || "https://via.placeholder.com/150"
   });
 
